@@ -4,19 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Account & Data Deletion - SplitNest</title>
-    <meta name="description" content="Official Google Play compliant Account and Data Deletion instructions for SplitNest.">
+    <meta name="description" content="Official Google Play compliant Account and Data Deletion instructions and web request for SplitNest.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary: #0D5C46;
             --primary-dark: #083D2E;
             --primary-light: #E8F5E9;
+            --primary-border: #A5D6A7;
             --surface: #FFFFFF;
             --background: #F8FAFC;
             --text-main: #0F172A;
             --text-muted: #475569;
             --border: #E2E8F0;
             --danger: #DC2626;
+            --danger-hover: #B91C1C;
             --danger-bg: #FEF2F2;
+            --danger-border: #FCA5A5;
+            --warning-bg: #FFFBEB;
+            --warning-border: #FCD34D;
+            --warning-text: #92400E;
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
         }
 
         * {
@@ -26,128 +38,305 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            line-height: 1.7;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            line-height: 1.65;
             color: var(--text-main);
             background-color: var(--background);
+            -webkit-font-smoothing: antialiased;
         }
 
         header {
             background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
             color: #FFFFFF;
-            padding: 40px 24px;
+            padding: 48px 24px;
             text-align: center;
         }
 
         .header-content {
-            max-width: 800px;
+            max-width: 820px;
             margin: 0 auto;
         }
 
+        .brand-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(8px);
+            padding: 6px 16px;
+            border-radius: 999px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+
         h1 {
-            font-size: 2.2rem;
-            margin-bottom: 8px;
+            font-size: 2.25rem;
+            font-weight: 800;
+            margin-bottom: 12px;
+            letter-spacing: -0.02em;
         }
 
         .subtitle {
             font-size: 1.1rem;
-            opacity: 0.9;
+            opacity: 0.92;
+            max-width: 640px;
+            margin: 0 auto;
+            font-weight: 400;
         }
 
         nav.legal-nav {
             background: #FFFFFF;
             border-bottom: 1px solid var(--border);
-            padding: 12px 24px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            padding: 14px 24px;
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            box-shadow: var(--shadow-sm);
         }
 
         .nav-container {
-            max-width: 800px;
+            max-width: 820px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            font-size: 0.95rem;
         }
 
         .nav-container a {
             color: var(--primary);
             text-decoration: none;
             font-weight: 600;
+            transition: color 0.15s ease;
+        }
+
+        .nav-container a:hover {
+            color: var(--primary-dark);
+            text-decoration: underline;
         }
 
         main {
-            max-width: 800px;
+            max-width: 820px;
             margin: 36px auto;
-            padding: 0 24px;
+            padding: 0 20px;
         }
 
         .card {
             background: #FFFFFF;
             border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 28px;
+            border-radius: 14px;
+            padding: 32px;
             margin-bottom: 28px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+            box-shadow: var(--shadow-sm);
         }
 
-        .danger-card {
-            background-color: var(--danger-bg);
-            border-left: 5px solid var(--danger);
-            border-radius: 8px;
+        .alert-card {
+            border-radius: 12px;
             padding: 20px 24px;
             margin-bottom: 28px;
         }
 
-        .danger-card h3 {
+        .alert-danger {
+            background-color: var(--danger-bg);
+            border: 1px solid var(--danger-border);
+            border-left: 5px solid var(--danger);
+        }
+
+        .alert-danger h3 {
             color: var(--danger);
             margin-bottom: 8px;
+            font-size: 1.15rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .alert-warning {
+            background-color: var(--warning-bg);
+            border: 1px solid var(--warning-border);
+            border-left: 5px solid #D97706;
+        }
+
+        .alert-warning h3 {
+            color: var(--warning-text);
+            margin-bottom: 8px;
+            font-size: 1.1rem;
         }
 
         h2 {
-            font-size: 1.4rem;
+            font-size: 1.45rem;
             color: var(--primary-dark);
             margin-bottom: 16px;
+            padding-bottom: 10px;
             border-bottom: 2px solid var(--primary-light);
-            padding-bottom: 8px;
+            letter-spacing: -0.01em;
         }
 
         p {
-            margin-bottom: 14px;
+            margin-bottom: 16px;
             color: var(--text-muted);
+            font-size: 1rem;
         }
 
         ol, ul {
             margin-left: 24px;
-            margin-bottom: 16px;
+            margin-bottom: 20px;
             color: var(--text-muted);
         }
 
         li {
-            margin-bottom: 10px;
+            margin-bottom: 12px;
+            padding-left: 4px;
+        }
+
+        .method-badge {
+            display: inline-block;
+            background: var(--primary-light);
+            color: var(--primary-dark);
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 12px;
         }
 
         .btn {
-            display: inline-block;
-            background-color: var(--primary);
-            color: #FFFFFF;
-            padding: 12px 24px;
-            border-radius: 8px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 14px 28px;
+            border-radius: 10px;
             text-decoration: none;
-            font-weight: 600;
-            margin-top: 10px;
+            font-weight: 700;
+            font-size: 1.05rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border: none;
+            box-shadow: var(--shadow);
+            margin: 12px 0;
+            text-align: center;
         }
 
         .btn-danger {
             background-color: var(--danger);
+            color: #FFFFFF;
+        }
+
+        .btn-danger:hover {
+            background-color: var(--danger-hover);
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary-light);
+        }
+
+        .email-box {
+            background: #F1F5F9;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 18px 20px;
+            margin: 18px 0;
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+            font-size: 0.92rem;
+            color: #1E293B;
+            overflow-x: auto;
+        }
+
+        .email-box strong {
+            color: var(--primary-dark);
+        }
+
+        table.data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 0.95rem;
+        }
+
+        table.data-table th, table.data-table td {
+            padding: 14px 16px;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+            vertical-align: top;
+        }
+
+        table.data-table th {
+            background-color: #F8FAFC;
+            color: var(--text-main);
+            font-weight: 700;
+        }
+
+        table.data-table tr:hover {
+            background-color: #F8FAFC;
+        }
+
+        .badge-del {
+            display: inline-block;
+            background: #FEE2E2;
+            color: #991B1B;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: 700;
+            font-size: 0.78rem;
+        }
+
+        .badge-ret {
+            display: inline-block;
+            background: #E0E7FF;
+            color: #3730A3;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: 700;
+            font-size: 0.78rem;
         }
 
         footer {
             border-top: 1px solid var(--border);
-            padding: 24px;
+            padding: 32px 24px;
             text-align: center;
             color: var(--text-muted);
             font-size: 0.9rem;
             background: #FFFFFF;
+            margin-top: 48px;
+        }
+
+        footer a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 640px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+            .card {
+                padding: 22px 18px;
+            }
+            .btn {
+                width: 100%;
+            }
+            table.data-table th, table.data-table td {
+                padding: 10px 12px;
+                font-size: 0.88rem;
+            }
         }
     </style>
 </head>
@@ -155,79 +344,153 @@
 
     <header>
         <div class="header-content">
-            <h1>SplitNest Account & Data Deletion</h1>
-            <p class="subtitle">Complete transparency regarding your data, your rights, and permanent deletion.</p>
+            <div class="brand-badge">SplitNest • Financial Transparency</div>
+            <h1>Account & Data Deletion</h1>
+            <p class="subtitle">Official deletion instructions, web request tool, and comprehensive data retention disclosure in accordance with Google Play Developer Policies.</p>
         </div>
     </header>
 
     <nav class="legal-nav">
         <div class="nav-container">
-            <strong>SplitNest Legal Center</strong>
+            <strong>SplitNest Legal & Data Safety Center</strong>
             <a href="privacy.html">← Back to Privacy Policy</a>
         </div>
     </nav>
 
     <main>
-        <div class="danger-card">
-            <h3>Permanent Action Notice</h3>
-            <p>Deleting your SplitNest account is permanent and irreversible. Your account credentials, private personal notes, and profile records will be wiped immediately.</p>
+        <!-- Notice of Permanent Action -->
+        <div class="alert-card alert-danger">
+            <h3>⚠️ Irreversible Action Warning</h3>
+            <p style="color: #7F1D1D; margin: 0;">Deleting your SplitNest account is permanent. Once completed, your user authentication credentials, cloud profile, personal notes, checklists, and local app cache cannot be recovered.</p>
         </div>
 
-        <!-- Method 1 -->
+        <!-- Section 1: Overview -->
         <div class="card">
-            <h2>Method 1: Direct In-App Deletion (Recommended)</h2>
-            <p>If you have the SplitNest application installed on your Android device, you can delete your account instantly:</p>
+            <h2>Your Right to Data Deletion</h2>
+            <p>At SplitNest, we respect your privacy and provide full control over your personal information. In compliance with Google Play Store User Data and Account Deletion policies, you have two simple and accessible methods to permanently delete your account and associated personal records:</p>
+            <ul>
+                <li><strong>Method 1: Direct In-App Deletion</strong> (Immediate — complete in 10 seconds from within SplitNest).</li>
+                <li><strong>Method 2: Web Deletion Request</strong> (Email-based — for users who have uninstalled the app or no longer have device access).</li>
+            </ul>
+        </div>
+
+        <!-- Section 2: Method 1 In-App -->
+        <div class="card">
+            <span class="method-badge">Method 1 (Instant)</span>
+            <h2>Delete Directly Inside the SplitNest App</h2>
+            <p>If you currently have SplitNest installed on your Android device, you can delete your account instantly without waiting for manual verification:</p>
             <ol>
                 <li>Open the <strong>SplitNest</strong> app on your Android device.</li>
-                <li>Tap the <strong>Profile</strong> tab in the bottom navigation bar (or your avatar icon in the top right).</li>
-                <li>Scroll down to the bottom of the Profile screen to find <strong>"Delete Account"</strong> (highlighted in red).</li>
-                <li>Tap <strong>Delete Account</strong>.</li>
-                <li>An alert dialog will appear outlining the impact. Tap <strong>"Delete Permanently"</strong> to confirm.</li>
-                <li>The app immediately deletes your profile and authentication record from Firebase, clears all locally stored SQLite Room database caches, and redirects to the Welcome screen.</li>
+                <li>Tap the <strong>Profile</strong> tab in the bottom navigation bar (or your avatar icon in the top right corner).</li>
+                <li>Scroll down to the bottom of the screen to the <strong>Account Actions</strong> section.</li>
+                <li>Tap <strong style="color: var(--danger);">Delete Account</strong> (highlighted with a trash icon).</li>
+                <li>A confirmation dialog will appear explaining the permanent nature of the deletion.</li>
+                <li>Tap <strong style="color: var(--danger);">Delete Permanently</strong> to execute.</li>
             </ol>
+            <p style="background: var(--primary-light); padding: 14px; border-radius: 8px; color: var(--primary-dark); font-size: 0.95rem; margin-top: 12px;">
+                <strong>What happens automatically:</strong> The app invokes Firebase Authentication to delete your user identity, removes your profile document from Cloud Firestore (<code>/users/{userId}</code>), resets local DataStore preferences, and purges cached SQLite Room tables from your device. You are immediately returned to the Welcome screen.
+            </p>
         </div>
 
-        <!-- Method 2 -->
+        <!-- Section 3: Method 2 Web Request -->
         <div class="card">
-            <h2>Method 2: Web Deletion Request (If App is Uninstalled)</h2>
-            <p>If you have uninstalled SplitNest or cannot access your device, you can submit an account deletion request via email:</p>
-            <ul>
-                <li>Send an email to: <a href="mailto:krishnadeshmukh721@gmail.com?subject=SplitNest%20Account%20Deletion%20Request">krishnadeshmukh721@gmail.com</a></li>
-                <li><strong>Subject:</strong> <code>SplitNest Account Deletion Request</code></li>
-                <li><strong>Body:</strong> Please include:
-                    <ul>
-                        <li>The email address associated with your SplitNest account (Google account or registration email).</li>
-                        <li>A brief statement confirming you want your account and profile data permanently deleted.</li>
-                    </ul>
-                </li>
-            </ul>
-            <p><strong>Processing Time:</strong> Web deletion requests are processed manually within <strong>7 business days</strong>. You will receive an email confirmation once your account records have been permanently removed.</p>
-            <a href="mailto:krishnadeshmukh721@gmail.com?subject=SplitNest%20Account%20Deletion%20Request" class="btn btn-danger">Request Account Deletion via Email</a>
+            <span class="method-badge">Method 2 (Web / Uninstalled)</span>
+            <h2>Submit a Web Account Deletion Request</h2>
+            <p>If you have uninstalled SplitNest, lost access to your device, or prefer to request deletion via the web, you can submit an official deletion request directly to our developer team:</p>
+
+            <div style="text-align: center; margin: 24px 0;">
+                <a href="mailto:krishnadeshmukh721@gmail.com?subject=SplitNest%20Account%20and%20Data%20Deletion%20Request&body=Hello%20SplitNest%20Support%2C%0A%0APlease%20permanently%20delete%20my%20SplitNest%20account%20and%20all%20associated%20personal%20data.%0A%0AAccount%20Details%3A%0A-%20Email%20Address%20used%20for%20SplitNest%3A%20%5BYour%20Email%20Address%5D%0A-%20Account%20Display%20Name%3A%20%5BYour%20Display%20Name%5D%0A-%20Account%20Type%3A%20%5BGoogle%20Sign-In%20or%20Email%2FPassword%5D%0A-%20Reason%20for%20deletion%20(optional)%3A%20%0A%0AI%20confirm%20that%20I%20am%20the%20authorized%20owner%20of%20this%20account%20and%20understand%20that%20this%20action%20is%20permanent.%0A%0AThank%20you." class="btn btn-danger">
+                    ✉️ Request Account Deletion via Email
+                </a>
+                <p style="font-size: 0.9rem; margin-top: 8px;">Tap the button above to launch your default email client with a pre-filled request form.</p>
+            </div>
+
+            <p>Alternatively, you may manually write an email to our designated contact address:</p>
+            <div class="email-box">
+                <strong>Recipient:</strong> <a href="mailto:krishnadeshmukh721@gmail.com" style="color: var(--primary);">krishnadeshmukh721@gmail.com</a><br>
+                <strong>Subject:</strong> <code>SplitNest Account and Data Deletion Request</code><br>
+                <strong>Required Details:</strong><br>
+                1. The email address registered with SplitNest (Google Sign-In address or email/password credential).<br>
+                2. Your registered display name.<br>
+                3. A clear statement requesting the permanent removal of your account and personal records.
+            </div>
+
+            <p><strong>Processing & Fulfillment Window:</strong> Web requests are manually validated and processed within <strong>7 to 30 calendar days</strong>. Once the deletion from Firebase Authentication and Firestore is completed, you will receive a final confirmation email.</p>
         </div>
 
-        <!-- Data Impact -->
+        <!-- Section 4: Data Deletion & Retention Breakdown -->
         <div class="card">
-            <h2>What Data Is Deleted vs. Retained</h2>
-            <p>In accordance with Google Play developer policies and financial ledger integrity requirements, here is the exact breakdown of data deletion:</p>
+            <h2>Detailed Data Deletion vs. Retention Breakdown</h2>
+            <p>In accordance with Google Play Developer Policy requirements, here is the transparent breakdown of what is deleted, what is retained, why, and the exact applicable retention schedules:</p>
 
-            <h3 style="color: var(--danger); margin: 16px 0 8px 0;">Data That Is Permanently Deleted:</h3>
-            <ul>
-                <li><strong>User Profile:</strong> Your display name, email, profile photo URL, UPI ID, and preferred currency.</li>
-                <li><strong>Cloud Authentication:</strong> Your Firebase Authentication user account and access tokens.</li>
-                <li><strong>Personal Notes & Checklists:</strong> All private text notes, checklists, and packing lists stored in <code>users/{userId}/personal_notes</code>.</li>
-                <li><strong>Local Device Storage:</strong> The entire local SQLite database, biometric PIN hashes, and cached user preferences on your phone.</li>
-            </ul>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th style="width: 28%;">Data Category</th>
+                        <th style="width: 18%;">Status</th>
+                        <th style="width: 20%;">Retention Period</th>
+                        <th style="width: 34%;">Details & Rationale</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>User Profile</strong><br><small style="color: var(--text-muted);">Name, Email, Photo URL, UPI ID, Currency</small></td>
+                        <td><span class="badge-del">Deleted</span></td>
+                        <td>Immediate (In-app)<br>Up to 30 days (Email)</td>
+                        <td>Document <code>/users/{userId}</code> in Cloud Firestore is permanently purged.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Authentication Credentials</strong><br><small style="color: var(--text-muted);">Firebase Auth UID, OAuth tokens, email identity</small></td>
+                        <td><span class="badge-del">Deleted</span></td>
+                        <td>Immediate (In-app)<br>Up to 30 days (Email)</td>
+                        <td>Firebase Authentication identity record is deleted permanently. You can no longer log in.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Local Device Cache</strong><br><small style="color: var(--text-muted);">SQLite Room DB, DataStore, PIN hashes</small></td>
+                        <td><span class="badge-del">Purged</span></td>
+                        <td>Immediate upon in-app deletion</td>
+                        <td>All on-device SQLite tables, cached groups, and security preferences are cleared.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Personal Notes & Checklists</strong><br><small style="color: var(--text-muted);">Private checklists, packing notes, reminders</small></td>
+                        <td><span class="badge-del">Deleted</span></td>
+                        <td>Immediate (In-app)<br>Up to 30 days (Email)</td>
+                        <td>All private documents in subcollection <code>/users/{userId}/personal_notes</code> are deleted.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Shared Expense Records</strong><br><small style="color: var(--text-muted);">Line items in group ledgers, split amounts, debts</small></td>
+                        <td><span class="badge-ret">Anonymized</span></td>
+                        <td>Indefinite (Numerical integrity)</td>
+                        <td>
+                            <strong>Why retained?</strong> In double-entry financial expense calculation, retroactively deleting a transaction or historical settlement would corrupt the running balances and debts of remaining group members. Therefore, financial line items are preserved with your personal identity permanently replaced with <em>"Former Member"</em>.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Server Backups & Crash Logs</strong><br><small style="color: var(--text-muted);">System diagnostic logs, Google Play crash logs</small></td>
+                        <td><span class="badge-ret">Rotated</span></td>
+                        <td>Up to 90 days</td>
+                        <td>Standard encrypted cloud platform backups and aggregated Crashlytics reports cycle out and purge automatically within 90 days.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 
-            <h3 style="color: var(--primary-dark); margin: 16px 0 8px 0;">Data Retained for Group Ledger Mathematical Integrity:</h3>
-            <ul>
-                <li><strong>Shared Group Transactions:</strong> If you participated in shared group expenses (e.g., you paid for a dinner or were allocated a portion of a trip), those historical line items remain in the group's ledger with your name replaced by an anonymized placeholder (e.g. <em>"Former Member"</em>).</li>
-                <li><strong>Why is this retained?</strong> Retaining the numerical values of past transactions is essential so that other real group members do not experience corrupted balances, broken math, or incorrect debts among themselves.</li>
-            </ul>
+        <!-- Section 5: Developer Confirmation & Verification Notice -->
+        <div class="alert-card alert-warning">
+            <h3>📋 Notice on Data Retention Policies</h3>
+            <p style="color: var(--warning-text); margin: 0;">
+                SplitNest does not maintain hidden user tracking databases or advertising profile brokers. If you have questions about specific data retention periods or require expedited removal for legal/compliance reasons, please email the developer at <a href="mailto:krishnadeshmukh721@gmail.com" style="color: var(--warning-text); font-weight: 700;">krishnadeshmukh721@gmail.com</a>.
+            </p>
         </div>
     </main>
 
     <footer>
-        <p>&copy; 2026 SplitNest. All rights reserved. • <a href="privacy.html" style="color: var(--primary); text-decoration: none;">Privacy Policy</a> • <a href="delete-account.html" style="color: var(--primary); text-decoration: none;">Account Deletion</a></p>
+        <p>&copy; 2026 SplitNest. All rights reserved.</p>
+        <p style="margin-top: 8px;">
+            <a href="privacy.html">Privacy Policy</a> • 
+            <a href="delete-account.html">Account & Data Deletion</a> • 
+            <a href="mailto:krishnadeshmukh721@gmail.com">Contact Developer</a>
+        </p>
     </footer>
 
 </body>
