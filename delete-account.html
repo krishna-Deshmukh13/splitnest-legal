@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account & Data Deletion - SplitNest</title>
+    <meta name="description" content="Official Google Play compliant Account and Data Deletion instructions for SplitNest.">
+    <style>
+        :root {
+            --primary: #0D5C46;
+            --primary-dark: #083D2E;
+            --primary-light: #E8F5E9;
+            --surface: #FFFFFF;
+            --background: #F8FAFC;
+            --text-main: #0F172A;
+            --text-muted: #475569;
+            --border: #E2E8F0;
+            --danger: #DC2626;
+            --danger-bg: #FEF2F2;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.7;
+            color: var(--text-main);
+            background-color: var(--background);
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+            color: #FFFFFF;
+            padding: 40px 24px;
+            text-align: center;
+        }
+
+        .header-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        nav.legal-nav {
+            background: #FFFFFF;
+            border-bottom: 1px solid var(--border);
+            padding: 12px 24px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .nav-container {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-container a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 36px auto;
+            padding: 0 24px;
+        }
+
+        .card {
+            background: #FFFFFF;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px;
+            margin-bottom: 28px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+        }
+
+        .danger-card {
+            background-color: var(--danger-bg);
+            border-left: 5px solid var(--danger);
+            border-radius: 8px;
+            padding: 20px 24px;
+            margin-bottom: 28px;
+        }
+
+        .danger-card h3 {
+            color: var(--danger);
+            margin-bottom: 8px;
+        }
+
+        h2 {
+            font-size: 1.4rem;
+            color: var(--primary-dark);
+            margin-bottom: 16px;
+            border-bottom: 2px solid var(--primary-light);
+            padding-bottom: 8px;
+        }
+
+        p {
+            margin-bottom: 14px;
+            color: var(--text-muted);
+        }
+
+        ol, ul {
+            margin-left: 24px;
+            margin-bottom: 16px;
+            color: var(--text-muted);
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: #FFFFFF;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+
+        .btn-danger {
+            background-color: var(--danger);
+        }
+
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 24px;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            background: #FFFFFF;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-content">
+            <h1>SplitNest Account & Data Deletion</h1>
+            <p class="subtitle">Complete transparency regarding your data, your rights, and permanent deletion.</p>
+        </div>
+    </header>
+
+    <nav class="legal-nav">
+        <div class="nav-container">
+            <strong>SplitNest Legal Center</strong>
+            <a href="privacy.html">← Back to Privacy Policy</a>
+        </div>
+    </nav>
+
+    <main>
+        <div class="danger-card">
+            <h3>Permanent Action Notice</h3>
+            <p>Deleting your SplitNest account is permanent and irreversible. Your account credentials, private personal notes, and profile records will be wiped immediately.</p>
+        </div>
+
+        <!-- Method 1 -->
+        <div class="card">
+            <h2>Method 1: Direct In-App Deletion (Recommended)</h2>
+            <p>If you have the SplitNest application installed on your Android device, you can delete your account instantly:</p>
+            <ol>
+                <li>Open the <strong>SplitNest</strong> app on your Android device.</li>
+                <li>Tap the <strong>Profile</strong> tab in the bottom navigation bar (or your avatar icon in the top right).</li>
+                <li>Scroll down to the bottom of the Profile screen to find <strong>"Delete Account"</strong> (highlighted in red).</li>
+                <li>Tap <strong>Delete Account</strong>.</li>
+                <li>An alert dialog will appear outlining the impact. Tap <strong>"Delete Permanently"</strong> to confirm.</li>
+                <li>The app immediately deletes your profile and authentication record from Firebase, clears all locally stored SQLite Room database caches, and redirects to the Welcome screen.</li>
+            </ol>
+        </div>
+
+        <!-- Method 2 -->
+        <div class="card">
+            <h2>Method 2: Web Deletion Request (If App is Uninstalled)</h2>
+            <p>If you have uninstalled SplitNest or cannot access your device, you can submit an account deletion request via email:</p>
+            <ul>
+                <li>Send an email to: <a href="mailto:krishnadeshmukh721@gmail.com?subject=SplitNest%20Account%20Deletion%20Request">krishnadeshmukh721@gmail.com</a></li>
+                <li><strong>Subject:</strong> <code>SplitNest Account Deletion Request</code></li>
+                <li><strong>Body:</strong> Please include:
+                    <ul>
+                        <li>The email address associated with your SplitNest account (Google account or registration email).</li>
+                        <li>A brief statement confirming you want your account and profile data permanently deleted.</li>
+                    </ul>
+                </li>
+            </ul>
+            <p><strong>Processing Time:</strong> Web deletion requests are processed manually within <strong>7 business days</strong>. You will receive an email confirmation once your account records have been permanently removed.</p>
+            <a href="mailto:krishnadeshmukh721@gmail.com?subject=SplitNest%20Account%20Deletion%20Request" class="btn btn-danger">Request Account Deletion via Email</a>
+        </div>
+
+        <!-- Data Impact -->
+        <div class="card">
+            <h2>What Data Is Deleted vs. Retained</h2>
+            <p>In accordance with Google Play developer policies and financial ledger integrity requirements, here is the exact breakdown of data deletion:</p>
+
+            <h3 style="color: var(--danger); margin: 16px 0 8px 0;">Data That Is Permanently Deleted:</h3>
+            <ul>
+                <li><strong>User Profile:</strong> Your display name, email, profile photo URL, UPI ID, and preferred currency.</li>
+                <li><strong>Cloud Authentication:</strong> Your Firebase Authentication user account and access tokens.</li>
+                <li><strong>Personal Notes & Checklists:</strong> All private text notes, checklists, and packing lists stored in <code>users/{userId}/personal_notes</code>.</li>
+                <li><strong>Local Device Storage:</strong> The entire local SQLite database, biometric PIN hashes, and cached user preferences on your phone.</li>
+            </ul>
+
+            <h3 style="color: var(--primary-dark); margin: 16px 0 8px 0;">Data Retained for Group Ledger Mathematical Integrity:</h3>
+            <ul>
+                <li><strong>Shared Group Transactions:</strong> If you participated in shared group expenses (e.g., you paid for a dinner or were allocated a portion of a trip), those historical line items remain in the group's ledger with your name replaced by an anonymized placeholder (e.g. <em>"Former Member"</em>).</li>
+                <li><strong>Why is this retained?</strong> Retaining the numerical values of past transactions is essential so that other real group members do not experience corrupted balances, broken math, or incorrect debts among themselves.</li>
+            </ul>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 SplitNest. All rights reserved. • <a href="privacy.html" style="color: var(--primary); text-decoration: none;">Privacy Policy</a> • <a href="delete-account.html" style="color: var(--primary); text-decoration: none;">Account Deletion</a></p>
+    </footer>
+
+</body>
+</html>

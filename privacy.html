@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - SplitNest</title>
+    <meta name="description" content="Privacy Policy for SplitNest: Shared expenses made transparent, secure, and effortless.">
+    <style>
+        :root {
+            --primary: #0D5C46;
+            --primary-dark: #083D2E;
+            --primary-light: #E8F5E9;
+            --primary-accent: #10B981;
+            --surface: #FFFFFF;
+            --background: #F8FAFC;
+            --text-main: #0F172A;
+            --text-muted: #475569;
+            --border: #E2E8F0;
+            --card-bg: #FFFFFF;
+            --tag-bg: #ECFDF5;
+            --tag-text: #065F46;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.7;
+            color: var(--text-main);
+            background-color: var(--background);
+            padding: 0;
+            margin: 0;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+            color: #FFFFFF;
+            padding: 48px 24px;
+            text-align: center;
+            border-bottom: 4px solid var(--primary-accent);
+        }
+
+        .header-content {
+            max-width: 860px;
+            margin: 0 auto;
+        }
+
+        .brand-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.15);
+            padding: 6px 16px;
+            border-radius: 999px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 12px;
+            letter-spacing: -0.5px;
+        }
+
+        .subtitle {
+            font-size: 1.15rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto 16px auto;
+        }
+
+        .meta-info {
+            font-size: 0.875rem;
+            opacity: 0.75;
+        }
+
+        nav.legal-nav {
+            background: #FFFFFF;
+            border-bottom: 1px solid var(--border);
+            padding: 12px 24px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .nav-container {
+            max-width: 860px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .nav-links a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-left: 20px;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-accent);
+            text-decoration: underline;
+        }
+
+        main {
+            max-width: 860px;
+            margin: 40px auto;
+            padding: 0 24px;
+        }
+
+        .notice-card {
+            background-color: var(--primary-light);
+            border-left: 5px solid var(--primary);
+            padding: 20px 24px;
+            border-radius: 8px;
+            margin-bottom: 36px;
+        }
+
+        .notice-card h3 {
+            color: var(--primary-dark);
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+
+        .notice-card p {
+            color: var(--text-main);
+            font-size: 0.95rem;
+        }
+
+        section {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 32px;
+            margin-bottom: 32px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-bottom: 2px solid var(--primary-light);
+            padding-bottom: 10px;
+        }
+
+        h3 {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--text-main);
+            margin: 20px 0 10px 0;
+        }
+
+        p {
+            margin-bottom: 14px;
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+
+        ul {
+            margin-left: 24px;
+            margin-bottom: 16px;
+            color: var(--text-muted);
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        li strong {
+            color: var(--text-main);
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: var(--tag-bg);
+            color: var(--tag-text);
+            padding: 2px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            margin-right: 6px;
+        }
+
+        .table-wrapper {
+            overflow-x: auto;
+            margin: 16px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+        }
+
+        th, td {
+            padding: 12px 16px;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+
+        th {
+            background-color: var(--background);
+            color: var(--text-main);
+            font-weight: 600;
+        }
+
+        .contact-box {
+            background-color: #F1F5F9;
+            border: 1px solid #CBD5E1;
+            padding: 24px;
+            border-radius: 8px;
+            margin-top: 16px;
+        }
+
+        footer {
+            background-color: #FFFFFF;
+            border-top: 1px solid var(--border);
+            padding: 32px 24px;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-top: 60px;
+        }
+
+        footer a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2rem;
+            }
+            section {
+                padding: 20px 16px;
+            }
+            .nav-container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .nav-links a {
+                margin-left: 0;
+                margin-right: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-content">
+            <div class="brand-badge">SplitNest Official Legal Documentation</div>
+            <h1>Privacy Policy</h1>
+            <p class="subtitle">Shared expenses made transparent, mathematically accurate, and privacy-first.</p>
+            <div class="meta-info">Effective Date: November 26, 2026 • Application Version: 1.0.0 • Package: com.splitnest.expenses</div>
+        </div>
+    </header>
+
+    <nav class="legal-nav">
+        <div class="nav-container">
+            <strong>SplitNest Legal Center</strong>
+            <div class="nav-links">
+                <a href="#collection">Data Collected</a>
+                <a href="#permissions">Device Permissions</a>
+                <a href="#third-parties">Service Providers</a>
+                <a href="#group-sharing">Group Sharing</a>
+                <a href="delete-account.html" style="color: #DC2626;">Account Deletion</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <div class="notice-card">
+            <h3>Our Core Privacy Commitment</h3>
+            <p>SplitNest is built to simplify shared expenses among friends, roommates, and travel groups. <strong>We do not sell, rent, or trade your personal information or financial records to data brokers or advertising networks.</strong> Receipt scanning and voice expense entry run 100% on your device, and sensitive screen thumbnails are shielded from unauthorized capture.</p>
+        </div>
+
+        <!-- 1. Introduction -->
+        <section id="introduction">
+            <h2>1. Introduction & Overview</h2>
+            <p>This Privacy Policy explains how <strong>SplitNest</strong> ("we", "us", or "our"), developed by <strong>Krishna Deshmukh</strong>, collects, uses, stores, shares, and protects your information when you use our Android mobile application (Package ID: <code>com.splitnest.expenses</code>) and related synchronization services.</p>
+            <p>SplitNest is a peer-to-peer expense calculation and shared debt tracking application. It calculates transparent ledger balances, assists in recording repayments, and facilitates group discussions. SplitNest is <strong>not</strong> a bank, wallet, payment processor, or depository financial institution.</p>
+        </section>
+
+        <!-- 2. Information We Collect -->
+        <section id="collection">
+            <h2>2. Information We Collect</h2>
+            <p>We collect only the information necessary to authenticate your account, maintain collaborative group ledgers, and calculate accurate financial balances.</p>
+
+            <h3>A. Information You Provide Directly</h3>
+            <ul>
+                <li><strong>Account & Profile Information:</strong> When you register or sign in using Google Sign-In or email credentials, we receive your account identifier (UID), display name, email address, and profile photo URL. You may optionally supply a preferred base currency (e.g., INR, USD, EUR) and a UPI Virtual Payment Address (VPA) to expedite settlement link creation.</li>
+                <li><strong>Financial Ledger & Expense Data:</strong> When you add or edit an expense, we store the title/description, amount in minor currency units (paise/cents), original currency code, expense category (e.g., Groceries, Food, Travel), timestamp, designated payers, and allocation shares among participants.</li>
+                <li><strong>Settlements & Repayment Records:</strong> Information regarding repayments made between group members, including payer ID, recipient ID, repaid amount, payment method (e.g., UPI, Cash), and confirmation status.</li>
+                <li><strong>Groups & Member Roster:</strong> Group names, group categories, cover avatars, member lists, and membership roles (Owner, Editor, Member).</li>
+                <li><strong>Personal Notes & Interactive Checklists:</strong> Private text notes, packing checklists, and itinerary items you create for personal productivity.</li>
+                <li><strong>In-App Discussions:</strong> Messages, timestamps, and sender identities posted in one-on-one direct messages or group discussions.</li>
+            </ul>
+
+            <h3>B. Information Collected Automatically</h3>
+            <ul>
+                <li><strong>Device & Usage Data:</strong> Operating system version, device model, app lifecycle events, and crash diagnostic logs necessary for stability monitoring.</li>
+                <li><strong>Advertising Identifiers (Free Tier Only):</strong> Google Advertising ID (GAID) collected by the Google Mobile Ads SDK to display banner advertisements to non-subscribers.</li>
+            </ul>
+        </section>
+
+        <!-- 3. Device Permissions & On-Device Processing -->
+        <section id="permissions">
+            <h2>3. Device Permissions & On-Device Processing</h2>
+            <p>SplitNest requests only runtime permissions essential to optional, user-initiated features. We strictly enforce on-device processing to ensure your media and voice data remain private.</p>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Android Permission</th>
+                            <th>Feature / Purpose</th>
+                            <th>Privacy & Processing Guarantee</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="tag">android.permission.CAMERA</span></td>
+                            <td>Receipt Scanning (OCR)</td>
+                            <td><strong>100% On-Device Processing:</strong> Images captured with the camera are processed exclusively on your device using bundled Google ML Kit text recognition models. <strong>No photos or receipt text are ever transmitted to external cloud servers.</strong></td>
+                        </tr>
+                        <tr>
+                            <td><span class="tag">android.permission.RECORD_AUDIO</span></td>
+                            <td>Voice Expense Entry</td>
+                            <td><strong>Ephemeral Speech Recognition:</strong> Audio is processed via your Android system's built-in <code>SpeechRecognizer</code> service. Audio recordings are never saved to files or uploaded to our servers.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="tag">android.permission.READ_CONTACTS</span></td>
+                            <td>Add Person from Contacts</td>
+                            <td><strong>Single Contact Selection Only:</strong> Accessed only when you tap "Add from Contacts". Only the single contact you pick (name, phone/email) is imported into the expense. <strong>We never read, harvest, or upload your entire contact book.</strong></td>
+                        </tr>
+                        <tr>
+                            <td><span class="tag">android.permission.POST_NOTIFICATIONS</span></td>
+                            <td>Alerts & Notifications</td>
+                            <td>Used to deliver bill payment reminders, group join approvals, and incoming message alerts. You can disable notifications anytime in Android Settings.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>Biometric & PIN App Lock</h3>
+            <p>SplitNest includes an App Lock feature utilizing a 4-to-6 digit salted SHA-256 PIN and AndroidX BiometricPrompt (Fingerprint / Face Unlock). Biometric templates are stored securely in your device's hardware Secure Enclave / Trusted Execution Environment (TEE). SplitNest never has access to or stores your biometric markers.</p>
+        </section>
+
+        <!-- 4. Third-Party Service Providers -->
+        <section id="third-parties">
+            <h2>4. Third-Party Service Providers & SDKs</h2>
+            <p>We partner with vetted industry-standard service providers to power backend persistence, monetization, and authentication:</p>
+
+            <ul>
+                <li><strong>Google Firebase (Google LLC):</strong>
+                    <ul>
+                        <li><em>Firebase Authentication:</em> Manages user login, session tokens, and secure Google Sign-In.</li>
+                        <li><em>Cloud Firestore:</em> Provides encrypted cloud synchronization for your groups, shared expenses, settlements, and discussions under strict Firestore Security Rules.</li>
+                        <li>Privacy Policy: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a></li>
+                    </ul>
+                </li>
+                <li><strong>Google Mobile Ads (AdMob) & User Messaging Platform (Google LLC):</strong>
+                    <ul>
+                        <li>Used to serve banner advertisements on free accounts.</li>
+                        <li>In compliance with European (GDPR) and California (CCPA) regulations, the User Messaging Platform (UMP) displays consent choices.</li>
+                        <li><strong>Pro Subscribers:</strong> Verified Pro users enjoy an ad-free experience with all ad requests disabled.</li>
+                    </ul>
+                </li>
+                <li><strong>Google Play Billing (Google LLC):</strong>
+                    <ul>
+                        <li>Processes in-app subscriptions (Monthly, Quarterly, Annual Pro).</li>
+                        <li>Payment transactions, credit card handling, and UPI banking payments are conducted securely by Google Play. SplitNest never receives or stores your bank accounts or payment card numbers.</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+
+        <!-- 5. Data Sharing Among Group Members -->
+        <section id="group-sharing">
+            <h2>5. Data Sharing with Other Group Members</h2>
+            <p>Because SplitNest is a collaborative application, certain information is inherently shared with peers you invite or connect with:</p>
+            <ul>
+                <li><strong>Roster Visibility:</strong> Members of a shared group can see your display name, profile avatar, and email address to verify who is sharing expenses.</li>
+                <li><strong>Ledger Transparency:</strong> All members of a group can view expenses, payer amounts, individual split shares, and repayments recorded within that group.</li>
+                <li><strong>Discussions:</strong> Messages sent in a group chat are visible to all members of that group.</li>
+                <li><strong>Personal Data Isolation:</strong> Your personal notes, checklists, and separate groups are strictly private and cannot be viewed by members of other groups.</li>
+            </ul>
+        </section>
+
+        <!-- 6. Data Security & Storage -->
+        <section id="security">
+            <h2>6. Data Security & Storage</h2>
+            <p>We protect your financial information using multiple layers of technical security:</p>
+            <ul>
+                <li><strong>Encryption in Transit:</strong> All communications between your device and Firebase servers use TLS/HTTPS encryption.</li>
+                <li><strong>Local Database Security:</strong> Data cached on your device is protected by Android application sandboxing.</li>
+                <li><strong>Screen Capture & Recents Masking:</strong> When enabled in Profile Settings, SplitNest applies <code>FLAG_SECURE</code> to mask application balance thumbnails in the Android task switcher and prevent unauthorized screen captures.</li>
+                <li><strong>Granular Authorization:</strong> Cloud Firestore Security Rules v2 strictly enforce that only authenticated members of a group can read or write expenses. Debtors are blocked from falsely confirming their own repayments.</li>
+            </ul>
+        </section>
+
+        <!-- 7. Data Retention & Account Deletion -->
+        <section id="deletion">
+            <h2>7. Data Retention & Account Deletion</h2>
+            <p>We retain your personal data for as long as your account remains active or as needed to provide you with group expense calculations.</p>
+
+            <h3>How to Delete Your Account:</h3>
+            <ol style="margin-left: 24px; margin-bottom: 16px; color: var(--text-muted);">
+                <li><strong>In-App Deletion:</strong> Open SplitNest $\rightarrow$ navigate to <strong>Profile</strong> $\rightarrow$ tap <strong>Delete Account</strong> $\rightarrow$ confirm permanent deletion.</li>
+                <li><strong>Online Web Deletion Request:</strong> If you cannot access the app, visit our <a href="delete-account.html">Account Deletion Information Page</a> or email <a href="mailto:krishnadeshmukh721@gmail.com">krishnadeshmukh721@gmail.com</a> with the subject "SplitNest Account Deletion Request".</li>
+            </ol>
+
+            <h3>Data Deletion Impact:</h3>
+            <ul>
+                <li><strong>Immediate Purge:</strong> Your user profile, email credentials, cloud authentication record, and private personal notes are permanently wiped.</li>
+                <li><strong>Shared Ledger Preservation:</strong> To protect the mathematical accuracy of remaining group members who shared past expenses with you, historical transactions retain an anonymized placeholder (e.g., "Former Member") with no link to your personal contact details.</li>
+            </ul>
+        </section>
+
+        <!-- 8. User Rights & Choices -->
+        <section id="rights">
+            <h2>8. Your Rights & Privacy Choices</h2>
+            <p>Depending on your jurisdiction (such as GDPR in Europe, CCPA in California, or the Digital Personal Data Protection Act in India), you have rights regarding your information:</p>
+            <ul>
+                <li><strong>Access & Portability:</strong> You can export your transaction history into CSV, Excel, or PDF formats directly from the app.</li>
+                <li><strong>Correction:</strong> You can edit your display name, profile photo, and default currency at any time from the Profile screen.</li>
+                <li><strong>Withdraw Consent:</strong> You can revoke device permissions (Camera, Microphone, Contacts, Notifications) via your Android system settings at any time.</li>
+                <li><strong>Opt-Out of Personalized Ads:</strong> Free tier users can adjust personalized ad settings in their Android Device Settings under <em>Google $\rightarrow$ Ads $\rightarrow$ Reset or Delete Advertising ID</em>.</li>
+            </ul>
+        </section>
+
+        <!-- 9. Children's Privacy -->
+        <section id="children">
+            <h2>9. Children's Privacy</h2>
+            <p>SplitNest is intended for adult users aged <strong>18 and older</strong> for managing personal and group expenses. We do not knowingly solicit or collect personal data from individuals under 13 years of age (or under 16 in the European Economic Area). If we become aware that a child has provided us with personal information, we will delete it promptly.</p>
+        </section>
+
+        <!-- 10. Contact Information -->
+        <section id="contact">
+            <h2>10. Contact Us & Grievance Officer</h2>
+            <p>If you have any questions, feedback, or privacy-related requests regarding this policy or our data practices, please contact us:</p>
+            <div class="contact-box">
+                <p><strong>Developer & Data Controller:</strong> Krishna Deshmukh</p>
+                <p><strong>Application:</strong> SplitNest (Package: <code>com.splitnest.expenses</code>)</p>
+                <p><strong>Email:</strong> <a href="mailto:krishnadeshmukh721@gmail.com">krishnadeshmukh721@gmail.com</a></p>
+                <p><strong>Location:</strong> Maharashtra, India</p>
+                <p><strong>Response Time:</strong> We endeavor to respond to all legitimate requests within 30 days.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 SplitNest. All rights reserved. • <a href="privacy.html">Privacy Policy</a> • <a href="delete-account.html">Account Deletion</a></p>
+    </footer>
+
+</body>
+</html>
