@@ -26,7 +26,7 @@ This standalone public repository contains the official, verified legal document
    git add .
    git commit -m "feat: initial commit of SplitNest legal policies and account deletion"
    git branch -M main
-   git remote add origin https://github.com/<YOUR_GITHUB_USERNAME>/splitnest-legal.git
+   git remote add origin https://github.com/krishna-Deshmukh13/splitnest-legal.git
    git push -u origin main
    ```
 
@@ -37,5 +37,5 @@ This standalone public repository contains the official, verified legal document
    - Click **Save**.
 
 4. **Public Live HTTPS URLs:**
-   - **Privacy Policy:** `https://<YOUR_GITHUB_USERNAME>.github.io/splitnest-legal/privacy.html`
-   - **Account Deletion:** `https://<YOUR_GITHUB_USERNAME>.github.io/splitnest-legal/delete-account.html`
+   - **Privacy Policy:** `https://krishna-deshmukh13.github.io/splitnest-legal/privacy.html`
+   - **Account Deletion:** `https://krishna-deshmukh13.github.io/splitnest-legal/delete-account.html`
